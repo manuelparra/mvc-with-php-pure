@@ -77,7 +77,7 @@
         public function queryGetAll() {
             try {
                 $sql = "SELECT *
-                        FROM clientes";
+                        FROM cliente";
                 $rs = $this->pdo->prepare($sql);
                 $rs->execute();
                 return $rs->fetchAll(PDO::FETCH_OBJ);
@@ -90,10 +90,17 @@
             try {
                 $sql = "SELECT *
                         FROM cliente
-                        WHERE id = ?";
+                        WHERE id = 1";
                 $rs = $this->pdo->prepare($sql);
-                $rs->execute(array($this->id));
-                return $rs->fetch(PDO::FETCH_OBJ)
+                $rs->execute(array($this->getId()));
+                $rq = $rs->fetch(PDO::FETCH_ASSOC);
+
+                $this->cedula = $rq['cedula'];
+                $this->nombre = $rq['nombre'];
+                $this->apellido = $rq['apellido'];
+                $this->direccion = $rq['direccion'];
+                $this->telefono = $rq['telefono'];
+                $this->email = $rq['email'];
             } catch(Exception $e) {
                 die($e->getMessage());
             }
@@ -136,6 +143,20 @@
                     $this->direccion,
                     $this->telefono,
                     $this->email
+                ));
+            } catch(Exception $e) {
+                die($e->getMessage());
+            }
+        }
+
+        public function queryDelete() {
+            try {
+                $sql = "DELETE
+                        FROM clientes
+                        WHERE id = ?";
+                $rs = $this->pdo->prepare($sql);
+                $rs->execute(array(
+                    $this->id
                 ));
             } catch(Exception $e) {
                 die($e->getMessage());
