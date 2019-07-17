@@ -44,7 +44,7 @@
                                 <a href="../view/cliente.php?a=modificar&id=<?php echo $result->id; ?>&x=cliente.php?a=ver">Editar</a>
                             </td>
                             <td>
-                                <a onclick="javascript:return confirm('¿Desea eliminar este registro?');" href="../../cliente-controller.php?a=eliminar&id=<?php echo $result->id; ?>">Eliminar</a>
+                                <a onclick="javascript:return confirm('¿Desea eliminar este registro?');" href="../view/cliente.php?a=eliminar&id=<?php echo $result->id; ?>">Eliminar</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

@@ -152,7 +152,7 @@
         public function queryDelete() {
             try {
                 $sql = "DELETE
-                        FROM clientes
+                        FROM cliente
                         WHERE id = ?";
                 $rs = $this->pdo->prepare($sql);
                 $rs->execute(array(

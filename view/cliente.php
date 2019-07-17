@@ -9,5 +9,7 @@
         $controller->Listar();
     } elseif ($_REQUEST['a'] == 'guardar') {
         $controller->Guardar();
+    } elseif ($_REQUEST['a'] == 'eliminar') {
+        $controller->Eliminar();
     }
 ?>

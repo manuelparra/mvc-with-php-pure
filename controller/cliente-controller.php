@@ -39,12 +39,11 @@
         }
 
         public function Eliminar() {
-            $cli = new Cliente();
-
-            $cli->setId($_REQUEST['id']);
-            $cli->queruDelete();
-
-            header('Location: ../view/cliente.php');
+            if (isset($_REQUEST['id'])) {
+                $this->cli->setId($_REQUEST['id']);
+                $this->cli->queryDelete();
+            }
+            header('Location: cliente.php?a=ver');
         }
     }
 ?>
