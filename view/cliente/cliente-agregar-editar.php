@@ -6,6 +6,7 @@
         <title>CRUD utilizando MVC</title>
         <link rel="stylesheet" href="../assets/css/bootstrap.css" />
         <link rel="stylesheet" href="../assets/css/index.css" />
+        <script src="../assets/js/validacion.js"></script>
     </head>
     <body>
         <div class="container wrap-body">
@@ -24,36 +25,36 @@
 
                 <div class="form-group">
                     <label>Cedula</label>
-                    <input type="text" name="cedula" value="<?php echo $this->cli->getCedula(); ?>" class="form-control" placeholder="Ingrese su cédula" />
+                    <input type="text" name="cedula" value="<?php echo $this->cli->getCedula(); ?>" class="form-control" placeholder="Ingrese su cédula" data-validacion-tipo="requerido" />
                 </div>
 
                 <div class="form-group">
                     <label>Nombre</label>
-                    <input type="text" name="nombre" value="<?php echo $this->cli->getNombre(); ?>" class="form-control" placeholder="Ingrese su nombre" />
+                    <input type="text" name="nombre" value="<?php echo $this->cli->getNombre(); ?>" class="form-control" placeholder="Ingrese su nombre" data-validacion-tipo="requerido" />
                 </div>
 
                 <div class="form-group">
                     <label>Apellido</label>
-                    <input type="text" name="apellido" value="<?php echo $this->cli->getApellido(); ?>" class="form-control" placeholder="Ingrese su apellido" />
+                    <input type="text" name="apellido" value="<?php echo $this->cli->getApellido(); ?>" class="form-control" placeholder="Ingrese su apellido" data-validacion-tipo="requerido" />
                 </div>
 
                 <div class="form-group">
                     <label>Dirección</label>
-                    <input type="text" name="direccion" value="<?php echo $this->cli->getDireccion(); ?>" class="form-control" placeholder="Ingrese su dirección" />
+                    <input type="text" name="direccion" value="<?php echo $this->cli->getDireccion(); ?>" class="form-control" placeholder="Ingrese su dirección" data-validacion-tipo="requerido" />
                 </div>
 
                 <div class="form-group">
                     <label>Telefono</label>
-                    <input type="text" name="telefono" value="<?php echo $this->cli->getTelefono(); ?>" class="form-control" placeholder="Ingrese su numero de telefono" />
+                    <input type="text" name="telefono" value="<?php echo $this->cli->getTelefono(); ?>" class="form-control" placeholder="Ingrese su numero de telefono" data-validacion-tipo="requerido" />
                 </div>
 
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="text" name="email" value="<?php echo $this->cli->getEmail(); ?>" class="form-control" placeholder="Ingrese su correo electronico" />
+                    <input type="text" name="email" value="<?php echo $this->cli->getEmail(); ?>" class="form-control" placeholder="Ingrese su correo electronico" data-validacion-tipo="requerido" />
                 </div>
 
                 <div class="text-right">
-                    <button class="btn btn-success">Guardar</button>
+                    <button id="enviar" class="btn btn-success">Guardar</button>
                 </div>
             </form>
             <div class="row to-bottom">

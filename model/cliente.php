@@ -90,7 +90,7 @@
             try {
                 $sql = "SELECT *
                         FROM cliente
-                        WHERE id = 1";
+                        WHERE id = ?";
                 $rs = $this->pdo->prepare($sql);
                 $rs->execute(array($this->getId()));
                 $rq = $rs->fetch(PDO::FETCH_ASSOC);
